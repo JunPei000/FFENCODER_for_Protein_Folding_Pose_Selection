@@ -1,0 +1,15 @@
+
+Best,
+Lin
+
+> On Jan 16, 2019, at 2:16 PM, Lin Song <songlin3@chemistry.msu.edu> wrote:
+> 
+> Hi Jun,
+> 
+> Here are the files. You can start programming. I’ll double check them and let you know.
+> 
+> Best,
+> Lin
+> 
+> <ff94-torsion.txt><ff94-write.txt>
+
