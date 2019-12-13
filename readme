@@ -1,0 +1,32 @@
+Introduction to some important programs
+
+(1) FFENCODER_ff94 and FFENCODER_ff14 can provide atom pair wise energies based on Amber ff94 and ff14SB potential function set. 
+
+(2) FFENCODER_oop can provide the pair wise energies for out_of_plane torsion interactions based on both Amber ff94 and ff14SB potential functino set.
+
+
+Introduction for using FFENCODER and RF model to do protein-folding pose selection
+
+(1) Choose the protein-folding decoy set which needed to be calculated, put the path of the folder as direct1 in FFENCODER_ff94 or FFENCODER_ff14SB, and FFENCODER_oop. Run code FFENCODER_f94.py, FFENCODER_ff14.py, and FFENCODER_oop.py.
+
+(2) After the calculation, file 'descriptort_amber_ff94.csv', 'descriptorn_amber_ff94.csv', and 'descriptort_amber_oop_ff94.csv' can be found in the same protein-folding decoy set folder.
+
+(3) Put 'descriptort_amber_ff94.csv' and 'descriptorn_amber_ff94.csv' files in step 2 into a new folder (for example, the foldername can be 'original_tn_result'), put 'descriptort_amber_oop_ff94.csv' files in another new folder (for example, the foldername can be 'original_oop_result').
+
+(4) Type the path of 'original_tn_result' as direct1, and path of 'original_oop_result' as direct_oop in code 'final_descriptor_builder_with_oop.py'. At the same time, type a new path as direct2 in code 'final_descriptor_builder_with_oop.py' to save the output files (final descriptor files).
+
+(5) Run code 'final_descriptor_builder_with_oop.py'.
+
+(6) Now the final descriptor files are generated, the path is direct2 in code 'final_descriptor_builder_with_oop.py'.
+
+(7) Type the path of the folder which contains all final descriptor files as direct2 in code 'RF_grid_search_with_important_number_500_ff94_all.py' or 'RF_grid_search_with_important_number_500_ff14_all.py' (depends on which force field was used).
+
+(8) Run code 'RF_grid_search_with_important_number_500_ff94_all.py' or 'RF_grid_search_with_important_number_500_ff14_all.py' to get the model, the perfomance of the Random Forest model will be generated. 
+
+How to check if FFENCODER runs correctly?
+
+Use the structures provided in folder 'encode_test', put the path of 'pdbfile_single_94', 'pdbfile_single_14', 'pdbfile_pair_94', and 'pdbfile_pair_14' in FFENCODER_ff94, FFENCODER_ff14, and FFENCODER_oop, run those codes, compare the output files with the '.csv' files already exists in the same folder. If the output files are the same as the existed files, FFENCODER runs correctly. 
+
+
+
+
